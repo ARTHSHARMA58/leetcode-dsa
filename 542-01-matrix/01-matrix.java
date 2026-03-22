@@ -13,7 +13,6 @@ class Solution {
         int m=mat.length;
         int n=mat[0].length;
         int [][] vis=new int[m][n];
-        int[][] ans=new int [m][n];
         Queue<pair> q=new LinkedList<>();
         for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
@@ -30,7 +29,7 @@ class Solution {
             int c=q.peek().col;
             int s=q.peek().step;
             q.remove();
-            ans[r][c]=s;
+            mat[r][c]=s;
             for(int k=0;k<4;k++){
                 int nrow= r+ drow[k];
                 int ncol= c+ dcol[k];
@@ -41,6 +40,6 @@ class Solution {
                 }
             }
         }
-        return ans;
+        return mat;
     }
 }
